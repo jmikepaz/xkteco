@@ -1,8 +1,14 @@
 const ZKLib = require('zklib')
 const test = async () => {
  
- 
-let zkInstance = new ZKLib('192.168.131.153', 4370, 10000, 4000);
+
+let options  = {
+    ip:'192.168.131.153',
+    port: 4370,
+    inport:10000,
+    timeout: 4000
+} 
+let zkInstance = new ZKLib(options);
     try {
         // Create socket to machine 
         await zkInstance.createSocket()
