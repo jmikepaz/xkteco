@@ -1,4 +1,4 @@
-const ZKLib = require('./zklib')
+const ZKLib = require('zklib')
 const test = async () => {
  
  
