@@ -1,32 +1,23 @@
-const ZKLib = require('zklib')
-const test = async () => {
+const ZKLib = require('zklib');
  
-
-let options  = {
-    ip:'192.168.131.153',
-    port: 4370,
-    inport:10000,
-    timeout: 4000
-} 
-let zkInstance = new ZKLib(options);
-    try {
-        // Create socket to machine 
-        await zkInstance.createSocket()
+ZK = new ZKLib({
+  ip: '192.168.131.153',
+  port: 4370,
+  inport: 5200,
+  timeout: 5000,
+});
  
+// connect to access control device
+ZK.connect(function(err) {
+  if (err) throw err;
  
-        // Get general info like logCapacity, user counts, logs count
-        // It's really useful to check the status of device 
-        console.log(await zkInstance.getInfo())
-    } catch (e) {
-        console.log(e)
-        if (e.code === 'EADDRINUSE') {
-        }
-    }
+  // read the time info from th device
+  ZK.getTime(function(err, t) {
+    // disconnect from the device
+    ZK.disconnect();
  
+    if (err) throw err;
  
-    // Get users in machine 
-    const users = await zkInstance.getUsers()
-    console.log(users) 
-}
- 
-test()
+    console.log("Device clock's time is " + t.toString());
+  });
+});
