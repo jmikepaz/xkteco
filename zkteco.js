@@ -10,24 +10,15 @@ async function conected() {
     
     try {
         // Create socket to machine 
-        console.log(zkInstance); 
-        // Get general info like logCapacity, user counts, logs count
-        // It's really useful to check the status of device 
-        console.log(await zkInstance.connectionType)
-        zkInstance.connect(function(err) {
-            if (err) throw err;
-           
-            // read the time info from th device
-            zkInstance.getAttendance(function(err, t) {
-              // disconnect from the device
+        zkInstance.connect(function() {
+            zkInstance.getAttendance(function(err, data) {
               zkInstance.disconnect();
-           
-              if (err) throw err;
-           
-              console.log("Device clock's time is " +t);
+          
+              if (err) throw err; 
+          
+              console.log(data.toString());
             });
           });
-
 
     } catch (e) {
         console.log(e)
