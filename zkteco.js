@@ -10,10 +10,7 @@ async function conected() {
     
     try {
         // Create socket to machine 
-        console.log(zkInstance);
-        await zkInstance.createSocket('udp4')
-    
-    
+        console.log(zkInstance); 
         // Get general info like logCapacity, user counts, logs count
         // It's really useful to check the status of device 
         console.log(await zkInstance.getInfo())
