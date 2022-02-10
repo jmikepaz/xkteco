@@ -12,7 +12,8 @@ ZK.connect(function(err) {
   if (err) throw err;
  
   // read the time info from th device
-  ZK.getUser((data) => {
-      console.log(data);
-  })
+  ZK.getUser(function(err, user) {
+    if (err) throw err;
+    console.log( user );
+  });
 });
