@@ -12,9 +12,9 @@ async function conected() {
         // Create socket to machine 
         zkInstance.connect(function() {
             zkInstance.getAttendance(function(err, data) {
-              zkInstance.disconnect();
-          
-              if (err) throw err; 
+                
+                if (err) throw err; 
+                zkInstance.disconnect();
           
               console.log(data.toString());
             });
