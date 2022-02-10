@@ -10,6 +10,7 @@ async function conected() {
     
     try {
         // Create socket to machine 
+        console.log(zkInstance);
         await zkInstance.createSocket('udp4')
     
     
