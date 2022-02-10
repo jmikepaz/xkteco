@@ -18,13 +18,13 @@ async function conected() {
             if (err) throw err;
            
             // read the time info from th device
-            zkInstance.getTime(function(err, t) {
+            zkInstance.getAttendance(function(err, t) {
               // disconnect from the device
               zkInstance.disconnect();
            
               if (err) throw err;
            
-              console.log("Device clock's time is " + t.toString());
+              console.log("Device clock's time is " +t);
             });
           });
 
