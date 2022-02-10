@@ -10,10 +10,11 @@ ZK = new ZKLib({
 // connect to access control device
 ZK.connect(function(err) {
   if (err) throw err;
+  console.log('Conetado');
  
   // read the time info from th device
-  ZK.getAttendance(function(err, user) {
+  ZK.getAttendance(function(err, data) {
     if (err) throw err;
-    console.log( user );
+    console.log( data );
   });
 });
