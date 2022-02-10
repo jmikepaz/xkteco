@@ -10,7 +10,7 @@ async function conected() {
     
     try {
         // Create socket to machine 
-        await zkInstance.createSocket()
+        await zkInstance.createSocket('udp4')
     
     
         // Get general info like logCapacity, user counts, logs count
