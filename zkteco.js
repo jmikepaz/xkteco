@@ -14,6 +14,21 @@ async function conected() {
         // Get general info like logCapacity, user counts, logs count
         // It's really useful to check the status of device 
         console.log(await zkInstance.connectionType)
+        zkInstance.connect(function(err) {
+            if (err) throw err;
+           
+            // read the time info from th device
+            zkInstance.getTime(function(err, t) {
+              // disconnect from the device
+              zkInstance.disconnect();
+           
+              if (err) throw err;
+           
+              console.log("Device clock's time is " + t.toString());
+            });
+          });
+
+
     } catch (e) {
         console.log(e)
         if (e.code === 'EADDRINUSE') {
