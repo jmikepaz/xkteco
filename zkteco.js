@@ -12,7 +12,7 @@ ZK.connect(function(err) {
   if (err) throw err;
  
   // read the time info from th device
-  ZK.getUser(function(err, user) {
+  ZK.getAttendance(function(err, user) {
     if (err) throw err;
     console.log( user );
   });
