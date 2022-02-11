@@ -37,6 +37,7 @@ const test = async () => {
       // this callbacks take params is the percent of data downloaded and total data need to download 
     })
     console.log('---------------------*************ASISTENCIAS***********-------------------');
+    attendances = attendances.data
     console.log(attendances);
         attendances.forEach(element => {
             console.log(element);
