@@ -7,8 +7,8 @@ async function excute() {
                                                 em.Nombre as nombre
                                             FROM HoraExtra he JOIN
                                                 Empleado em ON em.IdEmpleado = he.IdEmpleado
-                                            WHERE he.Fecha BETWEEN '2022-01-31' AND '2022-02-04' AND
-                                                em.IdDispositivo = 55
+                                            WHERE he.Fecha BETWEEN '2022-02-07' AND '2022-02-11' AND
+                                                em.IdDispositivo = 57
                                                 GROUP BY em.Nombre 
                                             `)
     // console.log(codes.recordset);
@@ -17,7 +17,7 @@ async function excute() {
         console.log(element.nombre);
         try {
             let result = await conn.request()
-                            .input('FechaAsistencia', '2022-01-31')
+                            .input('FechaAsistencia', '2022-02-07')
                             .input('v_empleado',element.nombre)
                             .execute('sp_construccions_data') 
             

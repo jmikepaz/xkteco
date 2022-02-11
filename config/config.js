@@ -2,7 +2,7 @@ const sql = require('mssql');
 
 const config = {
     user: 'juan.paz',
-    password: 'Alutech2021',
+    password: 'Covid2022',
     server: '192.168.1.30',
     database: 'HorasExtras',
     domain: 'alutech',
