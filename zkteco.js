@@ -28,12 +28,17 @@ const test = async () => {
     
     // Get all logs in the machine 
     // Currently, there is no filter to take data, it just takes all !!
-    const logs = await zkInstance.getAttendances()
-    console.log('---------------------*************ASISTENCIAS***********-------------------');
-    console.log(logs)
-    console.log('---------------------*************ASISTENCIAS***********-------------------');
+    // const logs = await zkInstance.getAttendances()
+    // console.log('---------------------*************ASISTENCIAS***********-------------------');
+    // console.log(logs)
+    // console.log('---------------------*************ASISTENCIAS***********-------------------');
     
-    
+    const attendances = await zkInstance.getAttendances((percent, total)=>{
+      // this callbacks take params is the percent of data downloaded and total data need to download 
+    })
+    console.log('---------------------*************ASISTENCIAS***********-------------------');
+    console.log(attendances);
+    console.log('---------------------*************ASISTENCIAS***********-------------------');
     
     // Get the device time
     const getTime = await zkInstance.getTime();
