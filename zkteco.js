@@ -40,12 +40,7 @@ const test = async () => {
     console.log(attendances);
     console.log('---------------------*************ASISTENCIAS***********-------------------');
     
-    // Get the device time
-    const getTime = await zkInstance.getTime();
-    console.log('---------------------*************TIME***********-------------------');
-		console.log(getTime.toString());
-    console.log('---------------------*************TIME***********-------------------');
-
+    
     // Disconnect the machine ( don't do this when you need realtime update :))) 
     await zkInstance.disconnect()
 
