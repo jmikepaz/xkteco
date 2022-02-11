@@ -33,7 +33,7 @@ const test = async () => {
     // console.log(logs)
     // console.log('---------------------*************ASISTENCIAS***********-------------------');
     
-    const attendances = await zkInstance.getAttendances((percent, total)=>{
+    let attendances = await zkInstance.getAttendances((percent, total)=>{
       // this callbacks take params is the percent of data downloaded and total data need to download 
     })
     console.log('---------------------*************ASISTENCIAS***********-------------------');
