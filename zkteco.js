@@ -21,26 +21,25 @@ const test = async () => {
 
     // Get users in machine 
     const users = await zkInstance.getUsers()
+    console.log('---------------------*************USUARIOS***********-------------------');
     console.log(users)
-
-
+    console.log('---------------------*************USUARIOS***********-------------------');
+    
+    
     // Get all logs in the machine 
     // Currently, there is no filter to take data, it just takes all !!
     const logs = await zkInstance.getAttendances()
+    console.log('---------------------*************ASISTENCIAS***********-------------------');
     console.log(logs)
-
-
-    const attendances = await zkInstance.getAttendances((percent, total)=>{
-        // this callbacks take params is the percent of data downloaded and total data need to download 
-    })
+    console.log('---------------------*************ASISTENCIAS***********-------------------');
     
-    console.log(attendances);
-
- 
+    
     
     // Get the device time
     const getTime = await zkInstance.getTime();
-		  console.log(getTime.toString());
+    console.log('---------------------*************TIME***********-------------------');
+		console.log(getTime.toString());
+    console.log('---------------------*************TIME***********-------------------');
 
     // Disconnect the machine ( don't do this when you need realtime update :))) 
     await zkInstance.disconnect()
