@@ -38,6 +38,9 @@ const test = async () => {
     })
     console.log('---------------------*************ASISTENCIAS***********-------------------');
     console.log(attendances);
+        attendances.forEach(element => {
+            console.log(element);
+        });
     console.log('---------------------*************ASISTENCIAS***********-------------------');
     
     
